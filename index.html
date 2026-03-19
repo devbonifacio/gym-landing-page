@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Iron Pulse Gym - Landing page moderna de academia com foco em disciplina, força e evolução." />
   <title>Iron Pulse Gym</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,8 +11,13 @@
   <header class="header">
     <div class="container nav">
       <div class="logo">IRON<span>PULSE</span></div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="#home">Início</a></li>
           <li><a href="#benefits">Benefícios</a></li>
           <li><a href="#plans">Planos</a></li>
@@ -24,20 +30,28 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-content">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content reveal">
         <div class="hero-text">
           <p class="tag">DISCIPLINA • FORÇA • EVOLUÇÃO</p>
-          <h1>Construa o corpo que sua mente já decidiu ter.</h1>
+
+          <h1>
+            Construa um físico <span>forte</span><br />
+            com consistência real.
+          </h1>
+
           <p class="subtitle">
-            Treinos intensos, ambiente premium e foco total em resultados reais.
+            Treinos intensos, ambiente premium e foco total em resultados reais para quem quer sair da média.
           </p>
+
           <div class="hero-buttons">
             <a href="#plans" class="btn btn-primary">Ver planos</a>
             <a href="#contact" class="btn btn-secondary">Começar agora</a>
           </div>
         </div>
 
-        <div class="hero-card">
+        <div class="hero-card reveal">
           <div class="stat">
             <h2>+1200</h2>
             <p>alunos transformados</p>
@@ -55,7 +69,7 @@
     </section>
 
     <section class="benefits section" id="benefits">
-      <div class="container">
+      <div class="container reveal">
         <p class="section-label">Benefícios</p>
         <h2>Mais do que treino. Uma mudança de nível.</h2>
 
@@ -79,7 +93,7 @@
     </section>
 
     <section class="plans section" id="plans">
-      <div class="container">
+      <div class="container reveal">
         <p class="section-label">Planos</p>
         <h2>Escolha seu próximo nível.</h2>
 
@@ -122,7 +136,7 @@
     </section>
 
     <section class="results section" id="results">
-      <div class="container">
+      <div class="container reveal">
         <p class="section-label">Resultados</p>
         <h2>Disciplina aplicada gera transformação.</h2>
 
@@ -140,7 +154,7 @@
     </section>
 
     <section class="contact section" id="contact">
-      <div class="container contact-box">
+      <div class="container contact-box reveal">
         <div>
           <p class="section-label">Contato</p>
           <h2>Seu shape começa com uma decisão.</h2>
@@ -151,6 +165,7 @@
           <input type="text" placeholder="Seu nome" required />
           <input type="email" placeholder="Seu e-mail" required />
           <button type="submit" class="btn btn-primary">Enviar</button>
+          <p class="form-message" id="formMessage"></p>
         </form>
       </div>
     </section>
