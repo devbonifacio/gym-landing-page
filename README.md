@@ -15,9 +15,9 @@
 
 ## 💡 Sobre o projeto
 
-**Iron Pulse Gym** é uma landing page completa de academia desenvolvida do zero como projeto de portfólio front-end. O foco foi criar uma experiência visual premium com tema escuro em vermelho e preto, tipografia display, animações suaves e layout totalmente responsivo — sem frameworks, sem dependências externas.
+**Iron Pulse Gym** é uma landing page premium de academia desenvolvida do zero como projeto de portfólio front-end. O foco foi criar uma experiência visual forte com tema escuro em vermelho e preto, animações suaves, interface responsiva e componentes modernos — sem frameworks e sem dependências externas.
 
-O projeto simula um site real de academia com secções estratégicas para converter visitantes em alunos.
+Esta versão mantém a identidade visual intensa da academia, mas sobe o nível com FAQ interativo, mini-stats animadas no hero e uma estrutura ainda mais convincente para portfólio.
 
 ---
 
@@ -25,22 +25,22 @@ O projeto simula um site real de academia com secções estratégicas para conve
 
 | Secção | Descrição |
 |---|---|
-| 🦸 **Hero** | Chamada principal com mini-stats e painel do plano Pro em destaque |
+| 🦸 **Hero** | Chamada principal com mini-stats animadas e painel do plano Pro em destaque |
 | 💪 **Benefícios** | Cards com ícones e diferenciais da academia |
 | 💳 **Planos** | Basic (€19), Pro (€39) e Elite (€59/mês) |
 | 📊 **Resultados** | Comparativo antes/depois com destaque visual |
-| 💬 **Depoimentos** | Secção com 3 testemunhos de alunos |
-| 📬 **Contato** | Formulário com feedback visual e validação |
+| ❓ **FAQ** | Perguntas frequentes com acordeão interativo em JavaScript |
+| 📬 **Contato** | Formulário com feedback visual e validação básica |
 | 📱 **Responsivo** | Menu hambúrguer animado + layout adaptado para todos os ecrãs |
-| 🎞️ **Animações** | Scroll reveal com `IntersectionObserver` e active link no scroll |
+| 🎞️ **Animações** | Scroll reveal com `IntersectionObserver`, active link e contadores animados |
 
 ---
 
 ## 🛠️ Tecnologias
 
-- **HTML5** — Estrutura semântica com meta tags SEO e `preconnect` para Google Fonts
-- **CSS3** — Custom Properties, Flexbox, Grid, `clamp()`, `backdrop-filter`, `radial-gradient`, efeitos de glow
-- **JavaScript (Vanilla)** — `IntersectionObserver` para scroll reveal, active link dinâmico, menu mobile, validação de formulário
+- **HTML5** — Estrutura semântica com secções organizadas para uma landing page real
+- **CSS3** — Custom Properties, Flexbox, Grid, `clamp()`, `backdrop-filter`, `radial-gradient` e efeitos de glow
+- **JavaScript (Vanilla)** — `IntersectionObserver`, FAQ accordion, contadores animados, menu mobile e feedback do formulário
 - **Google Fonts** — `Bebas Neue` (logo/display) + `Inter` (corpo de texto)
 
 ---
@@ -48,21 +48,20 @@ O projeto simula um site real de academia com secções estratégicas para conve
 ## 🎨 Design
 
 - **Palette** — Fundo `#090909` com accent vermelho `#ff2a2a`
-- **Grid radial de fundo** — Textura sutil com `linear-gradient` sobrepostos
-- **Glows animados** — Dois `bg-glow` fixos em cantos opostos para profundidade
+- **Background glows** — Glows vermelhos suaves para profundidade visual
 - **Glassmorphism** — Header com `backdrop-filter: blur(12px)`
-- **Tipografia display** — `Bebas Neue` no logo; `Inter 800` nos títulos com `clamp()` fluido
-- **Hover states** — Elevação, brilho vermelho e transições suaves em todos os cards
+- **Tipografia display** — `Bebas Neue` no logo e `Inter 800` nos títulos
+- **Hover states** — Elevação, brilho vermelho e transições suaves nos cards
 
 ---
 
 ## 📁 Estrutura do projeto
 
-```
+```bash
 gym-landing-page/
-├── index.html    # Estrutura semântica com 6 secções + footer
-├── style.css     # Design system completo com CSS variables e responsividade
-├── script.js     # Scroll reveal, active nav, menu mobile e formulário
+├── index.html    # Estrutura da landing page com hero, planos, FAQ e contato
+├── style.css     # Design system completo com tema vermelho/preto e responsividade
+├── script.js     # Menu mobile, scroll reveal, FAQ, active nav e counters
 └── README.md
 ```
 
@@ -88,10 +87,10 @@ open index.html
 ## 🔥 Melhorias futuras
 
 - [ ] Integração com backend para envio real do formulário
-- [ ] Contadores animados nas mini-stats do hero
-- [ ] FAQ interativo com acordeão
+- [ ] Secção de depoimentos em carrossel
 - [ ] Lightbox para galeria de transformações
 - [ ] Dark/Light mode toggle
+- [ ] Filtro de planos ou calculadora de IMC
 
 ---
 

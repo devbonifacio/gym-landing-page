@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iron Pulse Gym</title>
-  <meta name="description" content="Landing page moderna de academia com visual premium em vermelho e preto." />
+  <meta name="description" content="Landing page premium de academia com visual vermelho e preto, design responsivo e interações em JavaScript puro." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
 <body>
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
 
   <header class="header">
     <div class="container nav">
@@ -30,7 +31,7 @@
           <li><a href="#benefits">Benefícios</a></li>
           <li><a href="#plans">Planos</a></li>
           <li><a href="#results">Resultados</a></li>
-          <li><a href="#testimonials">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
@@ -43,7 +44,7 @@
       <div class="container hero-content">
         <div class="hero-text reveal">
           <p class="eyebrow">DISCIPLINA • INTENSIDADE • RESULTADO</p>
-          <h1>Construa um shape <span>forte</span> com constância real.</h1>
+          <h1>Constrói um shape <span>forte</span> com consistência real.</h1>
           <p class="subtitle">
             Treinos intensos, ambiente premium e acompanhamento para quem quer sair da média e evoluir de verdade.
           </p>
@@ -55,15 +56,15 @@
 
           <div class="hero-mini-stats">
             <div>
-              <strong>+1200</strong>
+              <strong class="counter" data-target="1200">0</strong>
               <span>alunos transformados</span>
             </div>
             <div>
-              <strong>24/7</strong>
-              <span>mentalidade de evolução</span>
+              <strong class="counter" data-target="24">0</strong>
+              <span>mentalidade 24/7</span>
             </div>
             <div>
-              <strong>100%</strong>
+              <strong class="counter" data-target="100">0</strong>
               <span>foco em resultado</span>
             </div>
           </div>
@@ -87,10 +88,11 @@
             </div>
             <div class="panel-item">
               <span class="dot"></span>
-              <span>Área premium e motivadora</span>
+              <span>Ambiente premium e motivador</span>
             </div>
           </div>
 
+          <div class="panel-price">€39<span>/mês</span></div>
           <a href="#plans" class="btn btn-primary full">Quero evoluir</a>
         </div>
       </div>
@@ -184,28 +186,48 @@
             <p>Mais força, mais confiança e um físico construído com disciplina diária.</p>
           </div>
         </div>
+
+        <div class="testimonial-strip card reveal">
+          <p>“Comecei sem direção. Hoje tenho rotina, resultado e mais confiança dentro e fora da academia.”</p>
+          <strong>— André S.</strong>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="testimonials">
+    <section class="section" id="faq">
       <div class="container reveal">
-        <p class="section-label">Depoimentos</p>
-        <h2>Quem entra pra evoluir, <span>sente a diferença</span>.</h2>
+        <p class="section-label">FAQ</p>
+        <h2>Dúvidas que aparecem antes de <span>começar forte</span>.</h2>
 
-        <div class="cards three-cols">
-          <article class="card testimonial-card">
-            <p>“O ambiente me fez sair da zona de conforto. Ganhei consistência e mudei totalmente meu treino.”</p>
-            <strong>Lucas M.</strong>
+        <div class="faq-list">
+          <article class="faq-item active">
+            <button class="faq-question" type="button">
+              <span>Preciso já estar em forma para começar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Não. A ideia é começar no teu nível atual e evoluir com consistência, técnica e acompanhamento.</p>
+            </div>
           </article>
 
-          <article class="card testimonial-card">
-            <p>“Estrutura top, treino forte e acompanhamento que realmente ajuda a evoluir.”</p>
-            <strong>Rafael P.</strong>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Qual o melhor plano para hipertrofia?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>O plano Pro é o melhor equilíbrio entre custo, acompanhamento e estrutura para ganhar massa muscular.</p>
+            </div>
           </article>
 
-          <article class="card testimonial-card">
-            <p>“Comecei sem direção. Hoje tenho rotina, resultado e mais confiança dentro e fora da academia.”</p>
-            <strong>André S.</strong>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>A landing page funciona bem no telemóvel?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. O layout é responsivo, com menu mobile, espaçamento adaptado e secções reorganizadas para ecrãs menores.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -218,6 +240,7 @@
             <p class="section-label">Contato</p>
             <h2>O teu shape começa com uma <span>decisão</span>.</h2>
             <p>Entra em contacto e começa hoje a tua próxima fase de evolução.</p>
+            <a href="mailto:contact@ironpulsegym.com" class="contact-link">contact@ironpulsegym.com</a>
           </div>
 
           <form class="contact-form" id="contactForm">
@@ -231,10 +254,12 @@
     </section>
   </main>
 
+  <a class="floating-cta" href="#contact" aria-label="Falar com a academia">Começar</a>
+
   <footer class="footer">
     <div class="container footer-inner">
       <p>© 2026 Iron Pulse Gym</p>
-      <p>Landing page criada com HTML, CSS e JavaScript.</p>
+      <p>Landing page criada com HTML, CSS e JavaScript puro.</p>
     </div>
   </footer>
 

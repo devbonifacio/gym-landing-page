@@ -5,6 +5,8 @@ const sections = document.querySelectorAll("section[id]");
 const revealElements = document.querySelectorAll(".reveal");
 const form = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
+const faqItems = document.querySelectorAll(".faq-item");
+const counters = document.querySelectorAll(".counter");
 
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
@@ -48,6 +50,44 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+faqItems.forEach((item) => {
+  const button = item.querySelector(".faq-question");
+  button.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    faqItems.forEach((faq) => faq.classList.remove("active"));
+    if (!isActive) item.classList.add("active");
+  });
+});
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const counter = entry.target;
+      const target = Number(counter.dataset.target);
+      const suffix = target === 1200 ? "+" : target === 24 ? "/7" : "%";
+      let current = 0;
+      const increment = Math.max(1, Math.ceil(target / 40));
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        counter.textContent = `${current}${suffix}`;
+      }, 35);
+
+      counterObserver.unobserve(counter);
+    });
+  },
+  { threshold: 0.5 }
+);
+
+counters.forEach((counter) => counterObserver.observe(counter));
 
 if (form) {
   form.addEventListener("submit", (event) => {
